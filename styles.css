@@ -60,7 +60,7 @@ header {
   color: var(--text-color);
 }
 
-body.light .logo-img {
+body.light {
   filter: invert(0);
 }
 
