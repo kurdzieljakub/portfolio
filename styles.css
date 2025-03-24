@@ -149,11 +149,16 @@ footer {
 
 /* MOBILE FULLSCREEN MENU */
 @media (max-width: 768px) {
+  header {
+    height: 70px;
+  }
+
   .menu-toggle {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 1em;
     right: 1em;
+    z-index: 1001;
   }
 
   .nav-links {
