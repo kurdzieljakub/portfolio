@@ -89,9 +89,10 @@ body.light .logo-img {
 }
 
 .menu-toggle {
-  font-size: 2em;
-  cursor: pointer;
-  color: var(--text-color);
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
 }
 
 .right-controls {
