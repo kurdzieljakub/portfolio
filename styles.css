@@ -38,7 +38,7 @@ body.light {
 h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   padding: 0.4em 1em;
-  border-radius: 50px;
+  border-radius: 999px;
   background: linear-gradient(45deg, #470076, #7820B3);
   color: white;
   transition: all 0.3s ease;
@@ -46,8 +46,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-  background: white;
-  color: black;
+  background: #0f0f0f;
+  color: linear-gradient(45deg, #470076, #7820B3);
 }
 
 /* Gradient Animacje */
