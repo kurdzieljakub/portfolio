@@ -57,12 +57,12 @@ header {
 .logo-img {
   width: 32px;
   height: 32px;
-  filter: invert(0); /* czarne logo w ciemnym motywie */
+  filter: invert(1); /* Białe logo w dark mode */
   transition: filter 0.3s ease;
 }
 
 body.light .logo-img {
-  filter: invert(1); /* białe logo w jasnym motywie */
+  filter: invert(0); /* Czarne logo w light mode */
 }
 
 .logo-img {
