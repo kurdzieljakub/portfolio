@@ -57,10 +57,11 @@ header {
 .logo-img {
   width: 32px;
   height: 32px;
-  color: var(--text-color);
+  filter: invert(1);
+  transition: filter 0.3s ease;
 }
 
-body.light {
+body.light .logo-img {
   filter: invert(0);
 }
 
