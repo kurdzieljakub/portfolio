@@ -1,60 +1,11 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Lato', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-  line-height: 1.6;
-}
-
-/* Zmienne */
-:root {
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --accent-color: #a855f7;
-}
-
-body.light {
-  --bg-color: #ffffff;
-  --text-color: #121212;
-  --accent-color: #7c3aed;
-}
-
-/* Header Sticky */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--bg-color);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-/* Nawigacja */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 2em;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.3em;
-}
+/* ...reszta jak wcześniej... */
 
 .nav-links {
   display: flex;
   gap: 1.5em;
   margin: 0;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
@@ -68,24 +19,14 @@ header {
   color: var(--accent-color);
 }
 
-/* Menu i motyw */
-.right-controls {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
-
-.menu-toggle {
+.mobile-theme-toggle {
   display: none;
-  font-size: 2em;
-  cursor: pointer;
 }
 
+/* Styl dla przycisku motywu */
 #theme-toggle {
   background: none;
   border: none;
-  font-size: 1.6em;
-  color: var(--text-color);
   cursor: pointer;
   filter: grayscale(1);
 }
@@ -97,37 +38,11 @@ header {
 #theme-toggle svg {
   width: 24px;
   height: 24px;
+  color: var(--text-color);
   pointer-events: none;
 }
 
-main {
-  padding: 2em;
-  max-width: 1000px;
-  margin: 0 auto;
-  flex: 1;
-}
-
-section {
-  margin-bottom: 4em;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
-  text-align: center;
-  padding: 2em;
-  background-color: var(--bg-color);
-  border-top: 1px solid #333;
-  font-size: 0.9em;
-}
-
-/* Mobilne pełnoekranowe menu */
+/* MOBILE - pełnoekranowe menu z przyciskiem motywu */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -146,6 +61,8 @@ footer {
     font-size: 1.5em;
     z-index: 999;
     display: none;
+    text-align: center;
+    padding: 2em;
   }
 
   .nav-links.fullscreen.active {
@@ -157,11 +74,11 @@ footer {
   }
 
   .right-controls {
-    flex-direction: column;
-    align-items: flex-end;
+    display: flex;
   }
 
-  #theme-toggle {
-    font-size: 2em;
+  .mobile-theme-toggle {
+    display: block;
+    margin-top: 1em;
   }
 }
