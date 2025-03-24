@@ -89,10 +89,10 @@ body.light .logo-img {
 }
 
 .menu-toggle {
+  display: block;
+  position: relative;
   font-size: 2em;
   cursor: pointer;
-  display: none;
-  z-index: 1001;
   color: var(--text-color);
 }
 
