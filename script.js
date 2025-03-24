@@ -3,10 +3,10 @@ const body = document.body;
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-// Motyw ciemny/jasny
+// Przełączanie motywu
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("light");
-  themeToggle.textContent = body.classList.contains("light") ? "🌞 Zmień motyw" : "🌙 Zmień motyw";
+  themeToggle.textContent = body.classList.contains("light") ? "🌞" : "🌙";
 });
 
 // Hamburger menu
@@ -14,16 +14,14 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// Zamknięcie menu po kliknięciu linku (mobile)
+// Zamykanie menu po kliknięciu
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
-    if (navLinks.classList.contains("active")) {
-      navLinks.classList.remove("active");
-    }
+    navLinks.classList.remove("active");
   });
 });
 
-// Animacje przy przewijaniu
+// Animacje przewijania
 const sections = document.querySelectorAll(".fade-in");
 
 const observer = new IntersectionObserver(
