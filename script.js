@@ -14,6 +14,15 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
+// Zamknięcie menu po kliknięciu linku (mobile)
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    if (navLinks.classList.contains("active")) {
+      navLinks.classList.remove("active");
+    }
+  });
+});
+
 // Animacje przy przewijaniu
 const sections = document.querySelectorAll(".fade-in");
 
