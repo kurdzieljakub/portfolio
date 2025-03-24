@@ -12,13 +12,13 @@ body {
   transition: background 0.6s ease, color 0.3s ease;
   line-height: 1.6;
 
-  background: linear-gradient(-45deg, #0f0f0f, #210A30, #330552, #450073);
+  background: linear-gradient(-45deg, #0f0f0f, #210A30, #0f0f0f, #450073);
   background-size: 400% 400%;
   animation: gradientDark 15s ease infinite;
 }
 
 body.light {
-  background: linear-gradient(-45deg, #ffffff, #ECE3F3, #DAC6E6, #C7AADA);
+  background: linear-gradient(-45deg, #ffffff, #ECE3F3, #ffffff, #C7AADA);
   background-size: 400% 400%;
   animation: gradientLight 15s ease infinite;
 }
