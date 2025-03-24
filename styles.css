@@ -89,8 +89,6 @@ body.light .logo-img {
 }
 
 .menu-toggle {
-  display: block;
-  position: relative;
   font-size: 2em;
   cursor: pointer;
   color: var(--text-color);
