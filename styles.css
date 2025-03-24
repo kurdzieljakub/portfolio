@@ -1,3 +1,21 @@
+/* Reset i layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+}
+
+/* Zmienne */
 :root {
   --bg-color: #121212;
   --text-color: #f0f0f0;
@@ -10,29 +28,22 @@ body.light {
   --accent-color: #7c3aed;
 }
 
-body {
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-  line-height: 1.6;
-}
-
+/* Header Sticky */
 header {
-  margin-bottom: 2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
+/* Nawigacja */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 2em;
-  background-color: var(--bg-color);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -41,21 +52,28 @@ header {
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 1.5em;
   margin: 0;
+  list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-color);
-  transition: color 0.3s;
   font-weight: 400;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: var(--accent-color);
+}
+
+/* Hamburger i motyw po prawej */
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 .menu-toggle {
@@ -65,19 +83,24 @@ header {
 }
 
 #theme-toggle {
-  background-color: var(--accent-color);
+  background: none;
   border: none;
-  color: white;
-  padding: 0.5em 1em;
-  border-radius: 5px;
+  font-size: 1.6em;
+  color: #fff;
   cursor: pointer;
-  margin-left: 1em;
+  filter: grayscale(1);
 }
 
+#theme-toggle:hover {
+  filter: grayscale(0);
+}
+
+/* Główna zawartość */
 main {
   padding: 2em;
   max-width: 1000px;
   margin: 0 auto;
+  flex: 1;
 }
 
 section {
@@ -92,6 +115,7 @@ section.fade-in.visible {
   transform: translateY(0);
 }
 
+/* Stopka przy dole */
 footer {
   text-align: center;
   padding: 2em;
@@ -100,7 +124,7 @@ footer {
   font-size: 0.9em;
 }
 
-/* Responsive styles */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -122,7 +146,12 @@ footer {
     display: block;
   }
 
+  .right-controls {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   #theme-toggle {
-    margin-top: 1em;
+    font-size: 2em;
   }
 }
