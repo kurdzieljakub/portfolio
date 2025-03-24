@@ -14,7 +14,6 @@ body {
   line-height: 1.6;
 }
 
-/* Zmienne kolorów */
 :root {
   --bg-color: #121212;
   --text-color: #f0f0f0;
@@ -43,12 +42,27 @@ header {
   align-items: center;
   padding: 1em 2em;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
   font-weight: 700;
   font-size: 1.3em;
   color: var(--text-color);
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
+
+body.light .logo-img {
+  filter: invert(0);
 }
 
 .nav-links {
@@ -70,11 +84,12 @@ header {
   color: var(--accent-color);
 }
 
-/* Hamburger i motyw */
 .menu-toggle {
   font-size: 2em;
   cursor: pointer;
   display: none;
+  z-index: 1001;
+  color: var(--text-color);
 }
 
 .right-controls {
@@ -128,10 +143,13 @@ footer {
   font-size: 0.9em;
 }
 
-/* Mobile menu */
+/* MOBILE FULLSCREEN MENU */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
   }
 
   .nav-links {
@@ -149,9 +167,9 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
-    z-index: 999;
+    z-index: 1000;
     text-align: center;
-    padding: 2em;
+    padding: 4em 2em 2em;
   }
 
   .nav-links.fullscreen.active {
