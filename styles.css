@@ -57,7 +57,7 @@ header {
 .logo-img {
   width: 32px;
   height: 32px;
-  filter: invert(1);
+  filter: invert(0);
   transition: filter 0.3s ease;
 }
 
