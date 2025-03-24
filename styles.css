@@ -1,17 +1,68 @@
-/* ...reszta jak wcześniej... */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+}
+
+/* Zmienne kolorów */
+:root {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --accent-color: #a855f7;
+}
+
+body.light {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --accent-color: #7c3aed;
+}
+
+/* Sticky header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Nawigacja */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3em;
+  color: var(--text-color);
+}
 
 .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   gap: 1.5em;
-  margin: 0;
-  list-style: none;
   align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 400;
   transition: color 0.3s;
 }
 
@@ -19,11 +70,18 @@
   color: var(--accent-color);
 }
 
-.mobile-theme-toggle {
+/* Hamburger i motyw */
+.menu-toggle {
+  font-size: 2em;
+  cursor: pointer;
   display: none;
 }
 
-/* Styl dla przycisku motywu */
+.right-controls {
+  display: flex;
+  align-items: center;
+}
+
 #theme-toggle {
   background: none;
   border: none;
@@ -39,11 +97,43 @@
   width: 24px;
   height: 24px;
   color: var(--text-color);
-  pointer-events: none;
 }
 
-/* MOBILE - pełnoekranowe menu z przyciskiem motywu */
+/* Sekcje */
+main {
+  padding: 2em;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+section {
+  margin-bottom: 4em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stopka */
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: var(--bg-color);
+  border-top: 1px solid #333;
+  font-size: 0.9em;
+}
+
+/* Mobile menu */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-links {
     display: none;
   }
@@ -52,15 +142,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     bottom: 0;
+    right: 0;
     background-color: var(--bg-color);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
     z-index: 999;
-    display: none;
     text-align: center;
     padding: 2em;
   }
@@ -69,16 +158,8 @@
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
-  .right-controls {
-    display: flex;
-  }
-
   .mobile-theme-toggle {
     display: block;
-    margin-top: 1em;
+    margin-top: 2em;
   }
 }
